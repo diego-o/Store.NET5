@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Store.Repository.DataAcess.Interfaces;
 
 namespace Store.Repository.DataAcess
@@ -34,7 +35,7 @@ namespace Store.Repository.DataAcess
 
         public TEntity Find<TEntity>(Func<TEntity, bool> predicate) where TEntity : class
         {
-            return _storeContext.Set<TEntity>().Find(predicate);
+            return _storeContext.Set<TEntity>().FirstOrDefault(predicate);
         }
     }
 }

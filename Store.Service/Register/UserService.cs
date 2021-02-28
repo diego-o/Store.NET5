@@ -11,7 +11,7 @@ namespace Store.Service.Register
         public UserService(IUserRepository userRepository) =>
             _userRepository = userRepository;
 
-        public User GetUser(int id) =>
+        public User GetUserById(int id) =>
             _userRepository.Find(t => t.Id == id);
 
         public User NewUser(User user) =>
